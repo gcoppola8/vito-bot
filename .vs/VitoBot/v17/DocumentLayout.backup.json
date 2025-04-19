@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\genna\\code\\VitoBot\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4589D31F-0980-4211-9480-74EECCD788CF}|VitoBot\\VitoBot.csproj|c:\\users\\genna\\code\\vitobot\\vitobot\\azuregameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4589D31F-0980-4211-9480-74EECCD788CF}|VitoBot\\VitoBot.csproj|solutionrelative:vitobot\\azuregameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4589D31F-0980-4211-9480-74EECCD788CF}|VitoBot\\VitoBot.csproj|c:\\users\\genna\\code\\vitobot\\vitobot\\vitobotinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4589D31F-0980-4211-9480-74EECCD788CF}|VitoBot\\VitoBot.csproj|solutionrelative:vitobot\\vitobotinstance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4589D31F-0980-4211-9480-74EECCD788CF}|VitoBot\\VitoBot.csproj|c:\\users\\genna\\code\\vitobot\\vitobot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4589D31F-0980-4211-9480-74EECCD788CF}|VitoBot\\VitoBot.csproj|solutionrelative:vitobot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "VitoBotInstance.cs",
+              "DocumentMoniker": "C:\\Users\\genna\\code\\VitoBot\\VitoBot\\VitoBotInstance.cs",
+              "RelativeDocumentMoniker": "VitoBot\\VitoBotInstance.cs",
+              "ToolTip": "C:\\Users\\genna\\code\\VitoBot\\VitoBot\\VitoBotInstance.cs",
+              "RelativeToolTip": "VitoBot\\VitoBotInstance.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAAAGkAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T21:49:31.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AzureGameService.cs",
+              "DocumentMoniker": "C:\\Users\\genna\\code\\VitoBot\\VitoBot\\AzureGameService.cs",
+              "RelativeDocumentMoniker": "VitoBot\\AzureGameService.cs",
+              "ToolTip": "C:\\Users\\genna\\code\\VitoBot\\VitoBot\\AzureGameService.cs",
+              "RelativeToolTip": "VitoBot\\AzureGameService.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T21:18:27.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\genna\\code\\VitoBot\\VitoBot\\Program.cs",
+              "RelativeDocumentMoniker": "VitoBot\\Program.cs",
+              "ToolTip": "C:\\Users\\genna\\code\\VitoBot\\VitoBot\\Program.cs",
+              "RelativeToolTip": "VitoBot\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T08:00:27.515Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
