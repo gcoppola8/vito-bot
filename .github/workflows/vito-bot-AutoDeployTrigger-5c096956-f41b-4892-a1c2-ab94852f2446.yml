@@ -1,0 +1,48 @@
+name: Trigger auto deployment for vito-bot
+
+# When this action will be executed
+on:
+  # Automatically trigger it when detected changes in repo
+  push:
+    branches: 
+      [ master ]
+    paths:
+    - '**'
+    - '.github/workflows/vito-bot-AutoDeployTrigger-5c096956-f41b-4892-a1c2-ab94852f2446.yml'
+
+  # Allow manual trigger 
+  workflow_dispatch:      
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions: 
+      id-token: write #This is required for requesting the OIDC JWT Token
+      contents: read #Required when GH token is used to authenticate with private repo
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.VITOBOT_AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.VITOBOT_AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.VITOBOT_AZURE_SUBSCRIPTION_ID }}
+
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v2
+        with:
+          appSourcePath: ${{ github.workspace }}
+          _dockerfilePathKey_: _dockerfilePath_
+          registryUrl: coppola-gdg9drg5gshmh8a5.azurecr.io
+          registryUsername: ${{ secrets.VITOBOT_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.VITOBOT_REGISTRY_PASSWORD }}
+          containerAppName: vito-bot
+          resourceGroup: Steam
+          imageToBuild: coppola-gdg9drg5gshmh8a5.azurecr.io/vito-bot:${{ github.sha }}
+          _buildArgumentsKey_: |
+            _buildArgumentsValues_
+
+
