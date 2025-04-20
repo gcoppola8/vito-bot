@@ -60,20 +60,10 @@ internal class VitoBotInstance
                 .WithType(ApplicationCommandOptionType.Integer)
             ).Build();
 
-        var djCommand = new SlashCommandBuilder()
-            .WithName("dj")
-            .WithDescription("Play music")
-            .AddOption(new SlashCommandOptionBuilder()
-                .WithName("music")
-                .WithDescription("ask for a song")
-                .WithType(ApplicationCommandOptionType.SubCommand)).Build();
-
-
         foreach (var guild in _client.Guilds)
         {
             await guild.CreateApplicationCommandAsync(testCommand);
             await guild.CreateApplicationCommandAsync(serverCommand);
-            await guild.CreateApplicationCommandAsync(djCommand);
 
             Console.WriteLine($"Registered commands for guild: {guild.Name}");
         }
@@ -91,9 +81,6 @@ internal class VitoBotInstance
             case "server":
                 await HandleServerCommand(command);
                 break;
-            case "dj":
-                await HandleDjCommand(command);
-                break;
             default:
                 await command.RespondAsync("I don't know how to handle this command.");
                 break;
@@ -101,22 +88,31 @@ internal class VitoBotInstance
 
     }
 
-    private static async Task HandleDjCommand(SocketSlashCommand command)
-    {
-        await command.RespondAsync("I don't know how to handle this command.");
-    }
-
     private static async Task HandleServerCommand(SocketSlashCommand command)
     {
-        var opObject = command.Data.Options.FirstOrDefault().Value;
+        var opObject = command.Data.Options.FirstOrDefault();
         if (opObject == null)
         {
-            // Implement use of azureGameService here << >>
-            //TODO go to help
             await command.RespondAsync("I don't know how to handle this command.");
+            return;
         }
 
-        var op = opObject as string;
-        await command.RespondAsync($"received: /server {op}");
+        var op = (Int64) opObject.Value;
+
+        if (op == 1) //START
+        {
+            _gameService.StartMinecraftServer();
+            await command.RespondAsync("Minecraft server started");
+        }
+        else if (op == 2) //STOP
+        {
+            _gameService.StopMinecraftServer();
+            await command.RespondAsync("Minecraft server stopped");
+        }
+        else
+        {
+            await command.RespondAsync("I don't know how to handle this command.");
+            return;
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace VitoBot
         {
             Console.WriteLine("Starting Minecraft server...");
 
-            _vmMinecraft.RestartAsync(Azure.WaitUntil.Started);
+            _vmMinecraft.PowerOnAsync(Azure.WaitUntil.Started);
 
             Console.WriteLine("Minecraft server started.");
         }
